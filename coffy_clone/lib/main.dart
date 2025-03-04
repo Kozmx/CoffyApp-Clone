@@ -1,3 +1,4 @@
+import 'package:coffy_clone/core/Account_Listtile_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +10,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      darkTheme: ThemeData.dark(),
+       home: Scaffold(
+        backgroundColor: Colors.grey,
+        appBar: AppBar(backgroundColor: Colors.grey,),  
+        body: AccountListtileWidget(iconss: Icons.account_balance_wallet_outlined, text: "Cüzdanım"),)
     );
   }
 }
