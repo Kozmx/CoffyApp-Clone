@@ -1,7 +1,7 @@
-import 'package:coffy_clone/widgets/Account_Listtile_widget.dart';
-import 'package:coffy_clone/constants/Project-Items.dart';
-import 'package:coffy_clone/widgets/card_info.dart';
-import 'package:coffy_clone/widgets/card_text.dart';
+import 'package:coffy_clone/core/widgets/Account_Listtile_widget.dart';
+import 'package:coffy_clone/core/Project-Items.dart';
+import 'package:coffy_clone/core/widgets/card_info.dart';
+import 'package:coffy_clone/core/widgets/card_text.dart';
 import 'package:flutter/material.dart';
 class AccountContainerWidget extends StatelessWidget {
   const AccountContainerWidget({super.key});

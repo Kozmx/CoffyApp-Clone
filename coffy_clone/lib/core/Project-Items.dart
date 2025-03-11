@@ -14,6 +14,6 @@ class PaddingItems {
   static const EdgeInsets symmetricText = EdgeInsets.symmetric(horizontal: 15,vertical: 0);
   static const EdgeInsets topPadding = EdgeInsets.only(top: 15);
   static const EdgeInsets bottomPadding = EdgeInsets.only(bottom:15 );
-   static const EdgeInsets symmetricListtile = EdgeInsets.symmetric(horizontal: 15,vertical: 5);
+  static const EdgeInsets symmetricListtile = EdgeInsets.symmetric(horizontal: 15,vertical: 5);
   
 }
