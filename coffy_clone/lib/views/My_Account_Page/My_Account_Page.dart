@@ -2,14 +2,21 @@ import 'package:coffy_clone/core/widgets/Account_Listtile_widget.dart';
 import 'package:coffy_clone/core/Project-Items.dart';
 import 'package:coffy_clone/core/widgets/card_info.dart';
 import 'package:coffy_clone/core/widgets/card_text.dart';
+import 'package:coffy_clone/views/My_Account_Page/Communication_Page.dart';
 import 'package:flutter/material.dart';
-class AccountContainerWidget extends StatelessWidget {
-  const AccountContainerWidget({super.key});
+class AccountView extends StatefulWidget {
+  const AccountView({super.key});
 
+  @override
+  State<AccountView> createState() => _AccountViewState();
+}
+
+class _AccountViewState extends State<AccountView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorItems.brightGrey,
+      appBar: AppBar(backgroundColor: ColorItems.blackcolor, centerTitle: true,title:Text("Hesabım", style: TextStyle(color:ColorItems.whitecolor ),) ,),  
       body:SingleChildScrollView(
         child: Column(children: [
           Padding(
@@ -64,7 +71,7 @@ class AccountContainerWidget extends StatelessWidget {
               
             ),
           ),
-            ...accountListItems.map((item) => AccountList(iconss: item.iconss, text: item.text)).toList(),
+            ...accountListItems.map((item) => AccountList(iconss: item.iconss, text: item.text, onTap: item.onTap)).toList(),
           
         ]),
       )
@@ -85,14 +92,21 @@ class SaveButton extends StatelessWidget {
 }
 
 final List<AccountList> accountListItems = [
-  AccountList(iconss: Icons.account_balance_wallet_outlined, text: "Coffy Cüzdan"),
-  AccountList(iconss: Icons.wallet_giftcard_outlined, text: "Kampanyalar"),
-  AccountList(iconss: Icons.favorite_border_outlined, text: "Favorilerim"),
-  AccountList(iconss: Icons.storefront_outlined, text: "Şubeler"),
-  AccountList(iconss: Icons.shopping_bag_outlined, text: "Önceki Siparişlerim"),
-  AccountList(iconss: Icons.credit_card, text: "Kartlarım"),
-  AccountList(iconss: Icons.alarm, text: "İletişim Tercihleri"),
-  AccountList(iconss: Icons.center_focus_strong_outlined, text: "Yardım Merkezi"),
-  AccountList(iconss: Icons.food_bank_outlined, text: "Alerjen Listesi"),
-  AccountList(iconss: Icons.exit_to_app_outlined, text: "Çıkış Yap"),
+  AccountList(iconss: Icons.account_balance_wallet_outlined, text: "Coffy Cüzdan", onTap: (BuildContext context) => null),
+  AccountList(iconss: Icons.wallet_giftcard_outlined, text: "Kampanyalar", onTap: (BuildContext context) => null),
+  AccountList(iconss: Icons.favorite_border_outlined, text: "Favorilerim", onTap: (BuildContext context) => null),
+  AccountList(iconss: Icons.storefront_outlined, text: "Şubeler", onTap: (BuildContext context) => null),
+  AccountList(iconss: Icons.shopping_bag_outlined, text: "Önceki Siparişlerim", onTap: (BuildContext context) => null),
+  AccountList(iconss: Icons.credit_card, text: "Kartlarım", onTap: (BuildContext context) => null),
+  AccountList(
+    iconss: Icons.alarm, 
+    text: "İletişim Tercihleri", 
+    onTap: (BuildContext context) => Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CommunicationView()),
+    ),
+  ),
+  AccountList(iconss: Icons.center_focus_strong_outlined, text: "Yardım Merkezi", onTap: (BuildContext context) => null),
+  AccountList(iconss: Icons.food_bank_outlined, text: "Alerjen Listesi", onTap: (BuildContext context) => null),
+  AccountList(iconss: Icons.exit_to_app_outlined, text: "Çıkış Yap", onTap: (BuildContext context) => null)
 ];
