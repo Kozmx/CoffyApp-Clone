@@ -1,4 +1,6 @@
+import 'package:coffy_clone/core/Account_Container_widget.dart';
 import 'package:coffy_clone/core/Account_Listtile_widget.dart';
+import 'package:coffy_clone/constants/Project-Items.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,8 +17,9 @@ class MainApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
        home: Scaffold(
         backgroundColor: Colors.grey,
-        appBar: AppBar(backgroundColor: Colors.grey,),  
-        body: AccountListtileWidget(iconss: Icons.account_balance_wallet_outlined, text: "Cüzdanım"),)
+        appBar: AppBar(backgroundColor: ColorItems.blackcolor, centerTitle: true,title:Text("Hesabım", style: TextStyle(color:ColorItems.whitecolor ),) ,),  
+        body: AccountContainerWidget()
+        )
     );
   }
 }
